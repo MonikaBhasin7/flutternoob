@@ -21,6 +21,15 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/login');
               },
             ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  child: Text("Hare Krsna"),
+                )
+              ],
+            ),
           )
         ],
       )),
