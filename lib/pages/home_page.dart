@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var typedName = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,18 +21,26 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            child: Text("Hare Krsna"),
-          ),
-          Container(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-              ),
-              child: Text("Go to Login Screen"),
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              },
+            child: const Text(
+              "Hare Krsna",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.greenAccent,
+                  fontWeight: FontWeight.w200,
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 2,
+                  wordSpacing: 0,
+                  backgroundColor: Colors.black),
             ),
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
+            child: Text("Go to Login Screen"),
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
           ),
           Container(
             child: Row(
@@ -38,17 +52,22 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             alignment: Alignment.center,
             child: TextFormField(
-              decoration: InputDecoration(
+              onChanged: (value) {
+                typedName = value;
+                setState(() {});
+              },
+              decoration: const InputDecoration(
                   hintText: "Enter Username", labelText: "Username"),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Login"))
+          ElevatedButton(onPressed: () {}, child: Text("Login $typedName"))
         ],
       )),
     );
