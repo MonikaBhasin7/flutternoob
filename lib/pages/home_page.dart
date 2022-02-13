@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutternoob/widgets/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home Page"),
         backgroundColor: Color.fromARGB(255, 255, 100, 89),
       ),
+      drawer: DrawerWidget(),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
