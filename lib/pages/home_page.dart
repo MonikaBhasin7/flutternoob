@@ -9,10 +9,21 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 100, 89),
       ),
       body: Center(
-        child: Container(
-          child: const Text("Hare Krsna"),
-        ),
-      ),
+          child: Column(
+        children: [
+          Container(
+            child: Text("Hare Krsna"),
+          ),
+          Container(
+            child: ElevatedButton(
+              child: Text("Go to Login Screen"),
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+            ),
+          )
+        ],
+      )),
     );
   }
 }
