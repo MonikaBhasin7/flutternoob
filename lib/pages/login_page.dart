@@ -21,19 +21,27 @@ class _LoginPageState extends State<LoginPage> {
             setState(() {});
           },
           child: AnimatedContainer(
-              width: containerPressed ? 50 : 100,
-              height: 100,
-              color: Colors.blue,
-              duration: const Duration(seconds: 1),
-              alignment: Alignment.center,
-              child: containerPressed
-                  ? const Icon(
-                      Icons.done,
-                      color: Colors.white,
-                    )
-                  : const Center(
-                      child: Text("Login Screen"),
-                    )),
+            width: containerPressed ? 50 : 100,
+            height: 50,
+            duration: const Duration(seconds: 1),
+            alignment: Alignment.center,
+            child: containerPressed
+                ? const Icon(
+                    Icons.done,
+                    color: Colors.white,
+                  )
+                : const Center(
+                    child: Text("Login Screen"),
+                  ),
+            decoration: BoxDecoration(
+              color: Colors.pink,
+              border: Border.all(
+                color: Colors.black,
+                width: 8,
+              ),
+              borderRadius: BorderRadius.circular(50),
+            ),
+          ),
         ),
       ),
     );
