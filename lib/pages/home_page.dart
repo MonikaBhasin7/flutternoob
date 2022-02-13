@@ -10,8 +10,11 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            alignment: Alignment.center,
             child: Text("Hare Krsna"),
           ),
           Container(
