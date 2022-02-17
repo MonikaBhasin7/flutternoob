@@ -25,18 +25,21 @@ class CakesWidget extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: Text("cake photo"),
+            width: 100,
+            height: 100,
+            child: Image.network(
+                "https://www.onceuponachef.com/images/2012/11/Vanilla-Birthday-Cake-18.jpg"),
           ),
           Column(
             children: [
               Container(
-                alignment: Alignment.topCenter,
-                margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.fromLTRB(0, 0, 10, 10),
                 child: Text("Cake"),
               ),
               Container(
                 alignment: Alignment.bottomCenter,
-                margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                margin: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                 child: Text("cake"),
               )
             ],
