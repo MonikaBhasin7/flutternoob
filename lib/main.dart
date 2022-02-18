@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutternoob/pages/home_page.dart';
 import 'package:flutternoob/pages/list_page.dart';
 import 'package:flutternoob/pages/login_page.dart';
+import 'package:flutternoob/pages/transactions_page.dart';
 import 'package:flutternoob/pages/try.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,15 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomePage(),
-      initialRoute: "/try",
+      initialRoute: "/transaction",
       routes: {
         "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
         "/list": (context) => ListPage(),
-        "/try": (context) => TryPage()
+        "/try": (context) => TryPage(),
+        "/transaction": (context) => TransactionPage()
       },
-      theme: ThemeData(
-          primarySwatch: Colors.blue, textTheme: GoogleFonts.latoTextTheme()),
+      // theme: ThemeData(
+      //     primarySwatch: Colors.blue, textTheme: GoogleFonts.latoTextTheme()),
     );
   }
 }
