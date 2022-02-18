@@ -96,5 +96,5 @@ class TryPage extends StatelessWidget {
   }
 }
 /**
- * 
+ * PlaceHolder, Aspect Ratio, Spacer, Divider, PageView , Opacity, Curved Navigation bar 
  */

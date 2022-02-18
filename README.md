@@ -137,10 +137,115 @@ Widget build(BuildContext context) {
               ),
             ),
             Flexible(
-              
+              flex: 3,
               child: Container(
                 color: Colors.black,
               ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+```
+
+**[6. Expanded](https://api.flutter.dev/flutter/widgets/Expanded-class.html)**
+
+Using an Expanded widget makes a child of a Row, Column, or Flex expand to fill the available space along the main axis
+```
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Try"),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.blue.shade500,
+                height: 50,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+```
+
+**[7. Wraps]()**
+
+A widget that displays its children in multiple horizontal or vertical runs.
+
+A Wrap lays out each child and attempts to place the child adjacent to the previous child in the main axis, given by direction, leaving spacing space in between. If there is not enough space to fit the child, Wrap creates a new run adjacent to the existing children in the cross axis.
+
+After all the children have been allocated to runs, the children within the runs are positioned according to the alignment in the main axis and according to the crossAxisAlignment in the cross axis.
+
+The runs themselves are then positioned in the cross axis according to the runSpacing and runAlignment.
+
+```
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Try"),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Wrap(
+              children: [
+                Container(
+                  color: Colors.blue.shade700,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade800,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade900,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade100,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade200,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade700,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade800,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade500,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade600,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade400,
+                  width: 50,
+                  height: 50,
+                )
+              ],
             )
           ],
         ),
