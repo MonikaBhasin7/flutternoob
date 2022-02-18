@@ -9,12 +9,33 @@ class TryPage extends StatelessWidget {
         title: Text("Try"),
       ),
       body: Container(
-        width: 120,
-        height: 30,
-        color: ColorNoob.light_purple,
-        child: FittedBox(
-          fit: BoxFit.fill,
-          child: Text("Hare Krsna"),
+        child: Column(
+          children: [
+            Container(
+              width: 120,
+              height: 30,
+              color: ColorNoob.light_purple,
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: Text("Hare Krsna"),
+              ),
+            ),
+            RichText(
+              text: const TextSpan(
+                text: 'Hello ',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: 'bold',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: ' world!'),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

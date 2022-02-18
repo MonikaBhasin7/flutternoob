@@ -83,3 +83,36 @@ Widget build(BuildContext context) {
   }
 ```
 
+**[4. Rich Text](https://medium.com/flutter-community/make-text-styling-more-effective-with-richtext-widget-b0e0cb4771ef)**
+
+The style property of text widget is used to apply various styles to a text, but a limitation of it is, the style gets applied to the entire text irrespective of whether the text is a single line or multiline. Consider below snippet to render a single line of text on screen:
+```
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Try"),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            RichText(
+              text: const TextSpan(
+                text: 'Hello ',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: 'bold',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: ' world!'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+```
