@@ -35,16 +35,10 @@ class TryPage extends StatelessWidget {
                 ],
               ),
             ),
-            Flexible(
-              flex: 2,
+            Expanded(
               child: Container(
-                color: Colors.amberAccent,
-              ),
-            ),
-            Flexible(
-              flex: 3,
-              child: Container(
-                color: Colors.black,
+                color: Colors.blue.shade500,
+                height: 50,
               ),
             )
           ],

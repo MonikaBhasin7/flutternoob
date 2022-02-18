@@ -116,3 +116,35 @@ Widget build(BuildContext context) {
     );
   }
 ```
+
+**[5. Flexible]**
+
+Using a Flexible widget gives a child of a Row, Column, or Flex the flexibility to expand to fill the available space in the main axis (e.g., horizontally for a Row or vertically for a Column)
+
+```
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Try"),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Flexible(
+              flex: 2,
+              child: Container(
+                color: Colors.amberAccent,
+              ),
+            ),
+            Flexible(
+              
+              child: Container(
+                color: Colors.black,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+```
