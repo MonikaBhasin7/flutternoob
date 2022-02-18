@@ -35,11 +35,59 @@ class TryPage extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                color: Colors.blue.shade500,
-                height: 50,
-              ),
+            Wrap(
+              children: [
+                Container(
+                  color: Colors.blue.shade700,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade800,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade900,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade100,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade200,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade700,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade800,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade500,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade600,
+                  width: 50,
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.blue.shade400,
+                  width: 50,
+                  height: 50,
+                )
+              ],
             )
           ],
         ),
