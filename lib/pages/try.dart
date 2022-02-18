@@ -34,6 +34,18 @@ class TryPage extends StatelessWidget {
                   TextSpan(text: ' world!'),
                 ],
               ),
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                color: Colors.amberAccent,
+              ),
+            ),
+            Flexible(
+              flex: 3,
+              child: Container(
+                color: Colors.black,
+              ),
             )
           ],
         ),
