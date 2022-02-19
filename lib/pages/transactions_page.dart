@@ -10,7 +10,8 @@ class TransactionPage extends StatelessWidget {
         child: Column(
           children: [
             TopBar(),
-            BalanceWidget(width, height),
+            NameWidget(width, height),
+            BalanceWidget(width, height)
           ],
         ),
       ),
@@ -52,11 +53,11 @@ class TopBar extends StatelessWidget {
   }
 }
 
-class BalanceWidget extends StatelessWidget {
+class NameWidget extends StatelessWidget {
   double width;
   double height;
 
-  BalanceWidget(this.width, this.height);
+  NameWidget(this.width, this.height);
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +101,89 @@ class BalanceWidget extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class BalanceWidget extends StatelessWidget {
+  double width;
+  double height;
+
+  BalanceWidget(this.width, this.height);
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        AnimatedContainer(
+          padding: EdgeInsets.all(5),
+          duration: const Duration(seconds: 2),
+          width: width * 0.47,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 100,
+              minHeight: 50,
+            ),
+            child: RichText(
+              text: const TextSpan(
+                  text: "12345",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  children: [
+                    TextSpan(
+                      text: '\nChecking Account Balance',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ]),
+            ),
+          ),
+        ),
+        AnimatedContainer(
+          padding: EdgeInsets.all(5),
+          duration: const Duration(seconds: 2),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
+          width: width * 0.47,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 100,
+              minHeight: 50,
+            ),
+            child: RichText(
+              text: const TextSpan(
+                  text: "12345",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  children: [
+                    TextSpan(
+                      text: '\nChecking Account Balance',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ]),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
