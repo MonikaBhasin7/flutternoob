@@ -12,7 +12,7 @@ class TransactionPage extends StatelessWidget {
             TopBar(),
             NameWidget(width, height),
             BalanceWidget(width, height),
-            GridItemWidget(0)
+            GridWidget(width, height)
           ],
         ),
       ),
@@ -121,7 +121,7 @@ class BalanceWidget extends StatelessWidget {
           duration: const Duration(seconds: 2),
           width: width * 0.47,
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Color.fromARGB(31, 166, 226, 241),
             borderRadius: BorderRadius.all(
               Radius.circular(5),
             ),
@@ -154,7 +154,7 @@ class BalanceWidget extends StatelessWidget {
           padding: EdgeInsets.all(5),
           duration: const Duration(seconds: 2),
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Color.fromARGB(31, 166, 226, 241),
             borderRadius: BorderRadius.all(
               Radius.circular(5),
             ),
@@ -190,19 +190,26 @@ class BalanceWidget extends StatelessWidget {
 }
 
 class GridWidget extends StatelessWidget {
+  double width;
+  double height;
+
+  GridWidget(this.width, this.height);
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(2.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            return GridItemWidget(index);
-          },
-          itemCount: 2,
-        ));
+      padding: const EdgeInsets.all(8.0),
+      child: Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        alignment: WrapAlignment.start,
+        children: [
+          GridItemWidget(0),
+          GridItemWidget(0),
+          GridItemWidget(0),
+          GridItemWidget(0)
+        ],
+      ),
+    );
   }
 }
 
