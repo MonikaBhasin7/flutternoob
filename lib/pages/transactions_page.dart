@@ -11,7 +11,8 @@ class TransactionPage extends StatelessWidget {
           children: [
             TopBar(),
             NameWidget(width, height),
-            BalanceWidget(width, height)
+            BalanceWidget(width, height),
+            GridItemWidget(0)
           ],
         ),
       ),
@@ -119,9 +120,9 @@ class BalanceWidget extends StatelessWidget {
           padding: EdgeInsets.all(5),
           duration: const Duration(seconds: 2),
           width: width * 0.47,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
-            borderRadius: const BorderRadius.all(
+            borderRadius: BorderRadius.all(
               Radius.circular(5),
             ),
           ),
@@ -181,6 +182,72 @@ class BalanceWidget extends StatelessWidget {
                     ),
                   ]),
             ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class GridWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(2.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return GridItemWidget(index);
+          },
+          itemCount: 2,
+        ));
+  }
+}
+
+class GridItemWidget extends StatelessWidget {
+  int index = -1;
+  GridItemWidget(this.index);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.bottomLeft,
+      children: [
+        AnimatedContainer(
+          duration: Duration(seconds: 2),
+          width: 170,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.blue.shade600,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
+        ),
+        const Positioned(
+          child: Icon(
+            Icons.all_inclusive,
+            size: 40,
+          ),
+          top: 20,
+          right: 20,
+        ),
+        const Positioned(
+          left: 12,
+          bottom: 40,
+          child: Text(
+            "Bill Pay",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+        const Positioned(
+          left: 12,
+          bottom: 20,
+          child: Text(
+            "Due on May 14",
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
           ),
         ),
       ],
