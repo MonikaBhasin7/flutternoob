@@ -15,8 +15,8 @@ class MenuPage extends StatelessWidget {
             children: [
               MenuToolbar(),
               SizedBox(
-                width: 200,
-                height: 200,
+                width: 180,
+                height: 180,
                 child: Card(
                   color: Colors.white,
                   elevation: 5,
@@ -24,8 +24,7 @@ class MenuPage extends StatelessWidget {
                   child: Stack(
                     alignment: Alignment.topLeft,
                     overflow: Overflow.visible,
-                    children: [
-                      Text("Hare Krsna"),
+                    children: const [
                       Positioned(
                         top: -17,
                         right: -17,
@@ -36,36 +35,36 @@ class MenuPage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        top: 100,
-                        left: 12,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Hare Krsna"),
-                            Text("Hare Krsna"),
-                            Text("Hare Krsna"),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("Hare Krsna"),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Text("Hare Krsna"),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
+                        width: 200,
+                        child: Text(
+                          "Food",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      )
+                        top: 110,
+                        left: 12,
+                      ),
+                      Positioned(
+                        child: Text(
+                          "100",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.green),
+                        ),
+                        bottom: 12,
+                        left: 12,
+                      ),
+                      Positioned(
+                        child: Icon(
+                          Icons.add_circle_outline,
+                          color: Colors.blue,
+                        ),
+                        bottom: 12,
+                        right: 12,
+                      ),
                     ],
                   ),
                 ),
