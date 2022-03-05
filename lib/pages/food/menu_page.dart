@@ -127,10 +127,8 @@ class MenuToolbar extends StatelessWidget {
 
 
 Future<String> doSomeProcessing() async {
-  return Future.delayed(
-    const Duration(seconds: 4),
-        () => 'Something from internet',
-  );
+  await Future.delayed(const Duration(seconds: 4));
+  return "";
 }
 
 /**ElevatedButton(
