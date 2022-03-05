@@ -101,8 +101,8 @@ class MenuToolbar extends StatelessWidget {
             size: 20,
           ),
           onPressed: () async {
-            await doSomeProcessing();
-            print("onPressed process complete.");
+            doSomeProcessing().then((value) => print("1"));
+            print("2");
           },
         ),
         ElevatedButton(
