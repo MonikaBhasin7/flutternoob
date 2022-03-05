@@ -100,7 +100,10 @@ class MenuToolbar extends StatelessWidget {
             color: Colors.green.shade400,
             size: 20,
           ),
-          onPressed: () {},
+          onPressed: () async {
+            await doSomeProcessing();
+            print("onPressed process complete.");
+          },
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -120,6 +123,14 @@ class MenuToolbar extends StatelessWidget {
       ],
     );
   }
+}
+
+
+Future<String> doSomeProcessing() async {
+  return Future.delayed(
+    const Duration(seconds: 4),
+        () => 'Something from internet',
+  );
 }
 
 /**ElevatedButton(
