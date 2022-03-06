@@ -5,10 +5,21 @@ import 'package:flutternoob/pages/list_page.dart';
 import 'package:flutternoob/pages/login_page.dart';
 import 'package:flutternoob/pages/transactions_page.dart';
 import 'package:flutternoob/pages/try.dart';
+import 'package:flutternoob/providers/cart_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CartNotifier(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -30,3 +41,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

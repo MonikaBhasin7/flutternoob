@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutternoob/providers/cart_notifier.dart';
+import 'package:provider/provider.dart';
 
 class MenuPage extends StatelessWidget {
   @override
@@ -24,8 +26,8 @@ class MenuPage extends StatelessWidget {
                   child: Stack(
                     alignment: Alignment.topLeft,
                     overflow: Overflow.visible,
-                    children: const [
-                      Positioned(
+                    children:  [
+                      const Positioned(
                         top: -17,
                         right: -17,
                         child: CircleAvatar(
@@ -37,8 +39,8 @@ class MenuPage extends StatelessWidget {
                       Positioned(
                         width: 200,
                         child: Text(
-                          "Food",
-                          style: TextStyle(
+                          "Food ${context.watch<CartNotifier>().cart_count}",
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -46,9 +48,9 @@ class MenuPage extends StatelessWidget {
                         top: 110,
                         left: 12,
                       ),
-                      Positioned(
+                      const Positioned(
                         child: Text(
-                          "100",
+                          '100',
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.normal,
@@ -103,6 +105,7 @@ class MenuToolbar extends StatelessWidget {
           onPressed: () async {
             doSomeProcessing().then((value) => print("1"));
             print("2");
+            context.read<CartNotifier>().incrementCartCount();
           },
         ),
         ElevatedButton(
