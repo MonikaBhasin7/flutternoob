@@ -7,6 +7,7 @@ import 'package:flutternoob/pages/login_page.dart';
 import 'package:flutternoob/pages/transactions_page.dart';
 import 'package:flutternoob/pages/try.dart';
 import 'package:flutternoob/providers/cart_notifier.dart';
+import 'package:flutternoob/providers/food_tab_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +17,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (_) => CartNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => FoodTabNotifier(),
         ),
       ],
       child: MyApp(),

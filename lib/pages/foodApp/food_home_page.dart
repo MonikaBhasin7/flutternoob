@@ -1,18 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutternoob/providers/food_tab_notifier.dart';
 import 'package:flutternoob/utils/colors.dart';
+import 'package:provider/provider.dart';
 
 class FoodHomePage extends StatefulWidget {
   @override
   State<FoodHomePage> createState() => _FoodHomePageState();
 }
 
-class _FoodHomePageState extends State<FoodHomePage>
-     {
-
-
-
+class _FoodHomePageState extends State<FoodHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +24,7 @@ class _FoodHomePageState extends State<FoodHomePage>
             TitleWidget(),
             SearchWidget(),
             TabWidget(),
+            Text("${context.watch<FoodTabNotifier>().getFoodType}")
           ],
         ),
       ),
@@ -108,9 +107,9 @@ class _TabWidgetState extends State<TabWidget>
     super.initState();
     _tabController = TabController(length: 6, vsync: this);
     _tabController?.addListener(() {
+      context.read<FoodTabNotifier>().setFoodType("${_tabController?.index}");
       print("Tab Listener - ${_tabController?.index}");
     });
-
   }
 
   @override
