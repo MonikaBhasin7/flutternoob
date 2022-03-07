@@ -7,7 +7,7 @@ class FoodHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.fromLTRB(25, 50, 25, 25),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,16 +27,8 @@ class FoodToolbarWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children:  [
-        SizedBox(
-          height: 50,
-          width: 50,
-          child: Image.asset('assets/images/hamburg.png'),
-        ),
-        SizedBox(
-          height: 50,
-          width: 50,
-          child: Image.asset('assets/images/shopping-cart.png'),
-        )
+        Image.asset('assets/images/hamburg.png'),
+        Image.asset('assets/images/shopping-cart.png')
       ],
     );
   }
@@ -45,10 +37,13 @@ class FoodToolbarWidget extends StatelessWidget {
 class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text("Delicious\nfood for you", style: TextStyle(
-        fontSize: 34,
-        fontWeight: FontWeight.bold
-    ));
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(0, 12, 0, 0),
+      child: Text("Delicious\nfood for you", style: TextStyle(
+          fontSize: 34,
+          fontWeight: FontWeight.bold
+      )),
+    );
   }
 
 }
