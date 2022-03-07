@@ -13,7 +13,8 @@ class FoodHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             FoodToolbarWidget(),
-            TitleWidget()
+            TitleWidget(),
+            SearchWidget()
           ],
         ),
       ),
@@ -45,5 +46,43 @@ class TitleWidget extends StatelessWidget {
       )),
     );
   }
+}
+
+class SearchWidget extends StatelessWidget {
+@override
+Widget build(BuildContext context) {
+  return Container(
+    margin: EdgeInsets.only(top: 20),
+    decoration: BoxDecoration(
+        color: Color(0xFFEFEEEE),
+        borderRadius: BorderRadius.all(
+          Radius.circular(20),
+        )
+    ),
+    child: Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Icon(
+            Icons.search,
+            color: Colors.black.withAlpha(120),
+          ),
+        ),
+        Expanded(
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "Search",
+              hintStyle: TextStyle(
+                color: Colors.black.withAlpha(120),
+              ),
+              border: InputBorder.none,
+            ),
+            onChanged: (String keyword) {},
+          ),
+        ),
+      ],
+    ),
+  );
+}
 
 }
