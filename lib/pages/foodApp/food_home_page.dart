@@ -9,14 +9,9 @@ class FoodHomePage extends StatefulWidget {
 }
 
 class _FoodHomePageState extends State<FoodHomePage>
-    with SingleTickerProviderStateMixin {
-  TabController? _tabController;
+     {
 
-  @override
-  void initState() {
-    _tabController = TabController(length: 6, vsync: this);
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +105,12 @@ class _TabWidgetState extends State<TabWidget>
 
   @override
   void initState() {
-    _tabController = TabController(length: 6, vsync: this);
     super.initState();
+    _tabController = TabController(length: 6, vsync: this);
+    _tabController?.addListener(() {
+      print("Tab Listener - ${_tabController?.index}");
+    });
+
   }
 
   @override
