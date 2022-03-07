@@ -9,8 +9,11 @@ class FoodHomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FoodToolbar()
+            FoodToolbarWidget(),
+            TitleWidget()
           ],
         ),
       ),
@@ -18,7 +21,7 @@ class FoodHomePage extends StatelessWidget {
   }
 }
 
-class FoodToolbar extends StatelessWidget {
+class FoodToolbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,6 +39,16 @@ class FoodToolbar extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class TitleWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Text("Delicious\nfood for you", style: TextStyle(
+        fontSize: 34,
+        fontWeight: FontWeight.bold
+    ));
   }
 
 }
