@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutternoob/pages/food/menu_page.dart';
+import 'package:flutternoob/pages/foodApp/food_home_page.dart';
 import 'package:flutternoob/pages/home_page.dart';
 import 'package:flutternoob/pages/list_page.dart';
 import 'package:flutternoob/pages/login_page.dart';
@@ -27,14 +28,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomePage(),
-      initialRoute: "/menu_page",
+      initialRoute: "/food_home_page",
       routes: {
         "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
         "/list": (context) => ListPage(),
         "/try": (context) => TryPage(),
         "/transaction": (context) => TransactionPage(),
-        "/menu_page": (context) => MenuPage()
+        "/menu_page": (context) => MenuPage(),
+        "/food_home_page" : (context) => FoodHomePage()
       },
       // theme: ThemeData(
       //     primarySwatch: Colors.blue, textTheme: GoogleFonts.latoTextTheme()),
