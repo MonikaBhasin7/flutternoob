@@ -5,6 +5,9 @@ import 'package:flutternoob/providers/food_tab_notifier.dart';
 import 'package:flutternoob/utils/colors.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/cakes.dart';
+import '../../widgets/cakes_widget.dart';
+
 class FoodHomePage extends StatefulWidget {
   @override
   State<FoodHomePage> createState() => _FoodHomePageState();
@@ -24,7 +27,11 @@ class _FoodHomePageState extends State<FoodHomePage> {
             TitleWidget(),
             SearchWidget(),
             TabWidget(),
-            Text("${context.watch<FoodTabNotifier>().getFoodType}")
+            SizedBox(
+              height: 50,
+            ),
+            HomePageFoodListWidget()
+            //Text("${context.watch<FoodTabNotifier>().getFoodType}")
           ],
         ),
       ),
@@ -143,5 +150,75 @@ class _TabWidgetState extends State<TabWidget>
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorWeight: 3,
     );
+  }
+}
+
+class HomePageFoodListWidget extends StatefulWidget {
+  @override
+  State<HomePageFoodListWidget> createState() => _HomePageFoodListWidgetState();
+}
+
+class _HomePageFoodListWidgetState extends State<HomePageFoodListWidget> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 270,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 4,
+          itemBuilder: (BuildContext context, int index) {
+            return FoodItemWidget();
+          }),
+    );
+  }
+}
+
+class FoodItemWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+        width: 221,
+        duration: const Duration(seconds: 2),
+        decoration: BoxDecoration(
+            color: ColorNoob.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(50),
+            )),
+        child: Stack(
+          overflow: Overflow.visible,
+          alignment: Alignment.topCenter,
+          children: [
+            Positioned(
+              top: -30,
+              child: Image.asset('assets/images/food1.png'),
+            ),
+            Positioned(
+                bottom: 30,
+                child: Column(
+                  children: [
+                    Text(
+                      "Veggie Tomato Mix",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Rs 1000",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: ColorNoob.orange),
+                    ),
+                  ],
+                ))
+          ],
+        ));
   }
 }
