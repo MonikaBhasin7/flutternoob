@@ -13,7 +13,7 @@ class CartPage extends StatelessWidget {
             Expanded(
                 child: ListView.builder(
                     scrollDirection: Axis.vertical,
-                    itemCount: 1,
+                    itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
                         margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -28,7 +28,7 @@ class CartPage extends StatelessWidget {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Image.asset("assets/images/monika.png"),
+                              child: Image.asset("assets/images/monika.png", width: 100, height: 100,),
                               flex: 3,
                             ),
                             Expanded(
