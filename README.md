@@ -30,7 +30,7 @@
   ```
 
 **[2. Animated Container](https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html)**
-  
+
 Animated version of Container that gradually changes its values over a period of time.
 The AnimatedContainer will automatically animate between the old and new values of properties when they change using the provided curve and duration. Properties that are null are not animated. Its child and descendants are not animated.
 ```
@@ -62,7 +62,7 @@ The AnimatedContainer will automatically animate between the old and new values 
 
 FittedBox is a very useful widget that scales and positions its child within itself according to fit and alignment. Consider an app, in which, you have to take input from the user and in a certain scenario, the user enters a large input that overflows and scatters other widgets. As many of the widgets are dynamic, which means they can grow and shrink in size, according to their child widget’s size. So, in this case, the user interface wouldn’t be adaptive. In order to overcome this problem, we can use the FittedBox widget.
 
-FittedBox restricts its child widgets from growing its size beyond a certain limit. It re-scales them according to the size available. For instance, if the text is displayed inside a container, and the text is to be entered by the user. If the user enters a large string of text, then the container would grow beyond its allocated size. But, if we wrap it with FittedBox, then it would fit the text according to the size available. For large string, it would shrink its size, hence would fit in the container. 
+FittedBox restricts its child widgets from growing its size beyond a certain limit. It re-scales them according to the size available. For instance, if the text is displayed inside a container, and the text is to be entered by the user. If the user enters a large string of text, then the container would grow beyond its allocated size. But, if we wrap it with FittedBox, then it would fit the text according to the size available. For large string, it would shrink its size, hence would fit in the container.
 
 ```
 Widget build(BuildContext context) {
@@ -252,4 +252,33 @@ Widget build(BuildContext context) {
       ),
     );
   }
+```
+
+**[8.Theme]()**
+```
+import 'package:flutter/material.dart';  
+  
+void main() {runApp(MyApp());}  
+  
+class MyApp extends StatelessWidget {  
+  @override  
+  Widget build(BuildContext context) {  
+    return MaterialApp(  
+      theme: ThemeData(  
+        // Define the default brightness and colors.  
+        brightness: Brightness.dark,  
+        primaryColor: Colors.lightBlue,  
+        accentColor: Colors.green,  
+  
+        // Define the default font family.  
+        fontFamily: 'Monotype Coursiva',  
+  
+        // Define the TextTheme that specifies the default  
+        // text styling for headlines, titles, bodies of text, and more.  
+        textTheme: TextTheme(  
+          headline: TextStyle(fontSize: 32.0, fontStyle: FontStyle.italic, fontFamily: 'Hind')  
+        ),  
+      ),  
+      home: MyThemePage(),  
+    );  
 ```
